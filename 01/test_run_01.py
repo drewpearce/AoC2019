@@ -1,7 +1,7 @@
-from run import calculate_reqs
-from run import main1
-from run import main2
-from run import sum_reqs
+from run_01 import calculate_reqs
+from run_01 import main1
+from run_01 import main2
+from run_01 import sum_reqs
 
 
 TEST_VALS = [12, 14, 1969, 100756]
