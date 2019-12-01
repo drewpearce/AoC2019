@@ -14,7 +14,7 @@ def main2(inputs):
 
 
 if __name__ == "__main__":
-    inputs = load_inputs_lines('01', 'inputs.txt', 'int')
+    inputs = load_inputs_lines('xx', 'inputs.txt', 'int')
     result1 = main1(inputs)
     result2 = main2(inputs)
     print(result1)
