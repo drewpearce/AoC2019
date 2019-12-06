@@ -4,34 +4,13 @@ import sys
 sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
 
 from helpers import load_inputs_lines  # noqa E402
+from helpers import IntcodeComputer
 
 
 def main1(inputs):
-    i = 0
-    while True:
-        op_code = inputs[i]
-
-        if op_code == 99:
-            break
-
-        pos1 = inputs[i + 1]
-        pos2 = inputs[i + 2]
-        pos3 = inputs[i + 3]
-        val1 = inputs[pos1]
-        val2 = inputs[pos2]
-
-        if op_code == 1:
-            result = val1 + val2
-        elif op_code == 2:
-            result = val1 * val2
-        else:
-            msg = f'Invalid op code {op_code} at position {i}.\n\n{inputs}'
-            raise Exception(msg)
-
-        inputs[pos3] = result
-        i += 4
-    
-    return inputs
+    comp = IntcodeComputer(inputs)
+    comp.run()
+    return comp.instructions
 
 
 def load_inputs_1():
